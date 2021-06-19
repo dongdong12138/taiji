@@ -1,4 +1,5 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
+button { padding: 2px 4px; }
 
 /* 代码区 */
 section.code {
@@ -30,6 +31,23 @@ section.taiji {
     display: block;
 }
 
+.btnGroup {
+    position: fixed;
+    right: 20px;
+    top: 550px;
+}
+.btnGroup.disappear {
+    animation: btnGroupAni 0.5s linear forwards;
+}
+@keyframes btnGroupAni {
+    0% { display: block; opacity: 1; }
+    100% { display: none; opacity: 0; }
+}
+.btnGroup > button {
+    display: block;
+    margin: 8px 0;
+}
+
 @media (max-width: 500px) {
     html, body {
         height: 100vh;
@@ -43,7 +61,7 @@ section.taiji {
         height: 50vh;
         overflow-y: auto;
     }
-    
+
     /* 太极区 */
     section.taiji {
         position: fixed;
@@ -51,4 +69,20 @@ section.taiji {
         transform: translateX(50%);
         top: 50vh;
     }
+
+    .btnGroup {
+        width: 100vw;
+        height: 50vh;
+        position: fixed;
+        right: 0;
+        top: 50vh;
+    }
+    .btnGroup > button {
+        margin: 0;
+        position: absolute;
+    }
+    .btnGroup > button:nth-child(1) { left: 5px; top: 5px; }
+    .btnGroup > button:nth-child(2) { right: 5px; top: 5px; }
+    .btnGroup > button:nth-child(3) { left: 5px; bottom: 5px; }
+    .btnGroup > button:nth-child(4) { right: 5px; bottom: 5px; }
 }

@@ -1,6 +1,7 @@
 let html = document.querySelector('#html')
 let style = document.querySelector('#style')
 let codeSection = document.querySelector('section.code')
+let btnGroup = document.querySelector('.btnGroup')
 
 let string = `
 /**
@@ -70,6 +71,7 @@ let string = `
 `
 let string2 = ''
 let n = -1
+let codeSpeed = 100
 
 let step = () => {
     setTimeout(() => {
@@ -89,8 +91,16 @@ let step = () => {
 
         if (n < string.length-1) {
             step()
+        } else {
+            console.log('写完了')
+            btnGroup.classList.add('disappear')
         }
-    }, 0)
+    }, codeSpeed)
 }
 
 step()
+
+btnGroup.addEventListener('click', (e) => {
+    const { speed } = e.target.dataset
+    codeSpeed = speed
+})

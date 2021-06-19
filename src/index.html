@@ -1,63 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
     <title>画一个太极</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        /* 代码区 */
-        section.code {
-            width: 50vw;
-        }
-        #html {
-            padding: 10px;
-            word-break: break-all;
-        }
-
-        /* 太极区 */
-        section.taiji {
-            width: 50vh;
-            height: 50vh;
-            position: fixed;
-            right: 20px;
-            top: 20px;
-        }
-        #div1 {
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-        #div1::before, #div1::after {
-            content: "";
-            display: block;
-        }
-
-        @media (max-width: 500px) {
-            html, body {
-                height: 100vh;
-                overflow: hidden;
-            }
-
-            /* 代码区 */
-            section.code {
-                border: 1px solid gray;
-                width: 100vw;
-                height: 50vh;
-                overflow-y: auto;
-            }
-
-            /* 太极区 */
-            section.taiji {
-                position: fixed;
-                right: 50%;
-                transform: translateX(50%);
-                top: 50vh;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
